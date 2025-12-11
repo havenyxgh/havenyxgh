@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HAVENYX — Home 🖤✨</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="HAVENYX — Onyx Touch 💎 & Haven Haus 🔌 — Luxury minimal marketplace." />
+</head>
+<body>
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="sidebar closed" aria-hidden="true">
+    <button id="btnCloseSidebar" class="icon-btn close">✕</button>
+    <div class="brand">
+      <h1>HAVENYX</h1>
+      <p class="tag">luxury • minimal • playful ✨</p>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-btn" data-route="home">🏠 Home</button>
+      <button class="nav-btn" data-route="categories">📂 Categories</button>
+      <button id="wishlistBtn" class="nav-btn">♡ Wishlist</button>
+      <button id="cartBtn" class="nav-btn">🛒 Cart</button>
+      <button id="inboxBtn" class="nav-btn">💬 Inbox</button>
+      <button id="profileBtn" class="nav-btn">👤 Profile</button>
+    </nav>
+
+    <footer class="sidebar-foot">
+      <small>© <span id="year"></span> HAVENYX</small>
+    </footer>
+  </aside>
+
+  <!-- OVERLAY -->
+  <div id="overlay" class="overlay hidden"></div>
+
+  <!-- APP HEADER -->
+  <header class="header">
+    <div class="left">
+      <button id="btnOpenSidebar" class="icon-btn">☰</button>
+      <div class="logo">
+        <span class="logo-text">HAVENYX</span>
+      </div>
+    </div>
+
+    <div class="center">
+      <input id="search" type="search" placeholder="Search products, e.g. 'black dress' or 'wireless charger' 🔎" />
+    </div>
+
+    <div class="right">
+      <!-- Segmented Pill Toggle for the two divisions -->
+      <div class="segmented" role="tablist" aria-label="Choose division">
+        <button class="seg-seg active" data-division="onyx">💎 Onyx Touch</button>
+        <button class="seg-seg" data-division="haus">🔌 Haven Haus</button>
+      </div>
+      <button id="authBtn" class="auth-btn">Log in / Sign up</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main" class="main">
+    <!-- HERO / Sales strip -->
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Sales ✨</h2>
+        <p>Curated deals from <strong>Onyx Touch</strong> &amp; <strong>Haven Haus</strong> — luxury vibes, friendly prices.</p>
+      </div>
+
+      <div class="hero-right">
+        <!-- Quick links to both sections -->
+        <button class="hero-card" data-division="onyx">
+          <div class="hero-emoji">💎</div>
+          <h3>Onyx Touch</h3>
+          <p>Fashion • Skincare • Accessories</p>
+        </button>
+
+        <button class="hero-card" data-division="haus">
+          <div class="hero-emoji">🔌</div>
+          <h3>Haven Haus</h3>
+          <p>Gadgets • Home • Tech accessories</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- PRODUCTS GRID -->
+    <section class="products-section">
+      <h3 class="section-head">Featured — <span id="activeDivisionLabel">Onyx Touch</span></h3>
+      <div id="productsGrid" class="products-grid" aria-live="polite">
+        <!-- product cards injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- WISHLIST / CART MODALS (simple) -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button id="modalClose" class="icon-btn close">✕</button>
+      <div id="modalContent">
+        <!-- injected -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
